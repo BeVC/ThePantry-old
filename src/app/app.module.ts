@@ -3,6 +3,14 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
+// Imports for loading & configuring the in-memory web api
+import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryDataService }  from '../in-memory-data.service';
+
+// ROUTING
+import { AppRoutingModule } from "./app-routing.module";
+
+// COMPONENT
 import { AppComponent } from './app.component';
 
 @NgModule({
@@ -12,7 +20,10 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    InMemoryWebApiModule.forRoot(InMemoryDataService),
+
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

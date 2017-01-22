@@ -1,0 +1,10 @@
+@import "../../../../stylesheets/main";
+
+app-login {
+    @include page();
+
+    .test {
+        border: 1px solid black;
+        background-color: yellow;
+    }
+}
