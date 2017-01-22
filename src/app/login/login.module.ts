@@ -1,6 +1,7 @@
 // ANGULAR
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 // ROUTING
 import { LoginRoutingModule } from "./login-routing.module";
@@ -14,7 +15,9 @@ import { LoginComponent } from './ui/login/login.component';
 @NgModule({
   imports: [
     CommonModule,
-    LoginRoutingModule
+    FormsModule,
+    LoginRoutingModule,
+
   ],
   declarations: [LoginComponent],
   providers: [LoginService]

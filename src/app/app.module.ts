@@ -19,7 +19,7 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    FormsModule,
+    //FormsModule,
     HttpModule,
     InMemoryWebApiModule.forRoot(InMemoryDataService),
 

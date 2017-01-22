@@ -1,10 +1,22 @@
 <div>
-	<label>Enter your email-address</label>
-	<input type="email" id="email" name="email" [(ngModel)]="email">
+	<form #loginForm="ngForm" (ngSubmit)="onSubmit()">
+		<label for="email">Enter your email-address</label>
+		<input type="email" id="email" name="email" [(ngModel)]="email" required />
 
-	<label>Enter your password</label>
-	<input type="password" id="password" name="password" [(ngModel)]="password">
+		<div *ngIf="formErrors.email">
+			{{ formErrors.email}}
+		</div>
 
+
+		<label for="password">Enter your password</label>
+		<input type="password" id="password" name="password" [(ngModel)]="password" required />
+
+		<div *ngIf="formErrors.password">
+			{{ formErrors.password}}
+		</div>
+
+		<button type="submit" [disabled]="!loginForm.form.valid">Submit</button>
+	</form>
 </div>
 
 <!--<div class="test">
