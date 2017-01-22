@@ -15,8 +15,12 @@ import { User } from "../../../models/user";
   encapsulation: ViewEncapsulation.None
 })
 export class LoginComponent implements OnInit {
+  // UI PROPERTIES
+  private email: string;
+  private password: string;
 
-  usersCol: User[] = [];
+
+  //usersCol: User[] = [];
 
   constructor(
     private loginService: LoginService
@@ -25,11 +29,14 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
 
-  testUserService(){
+
+
+
+  /*testUserService(){
     this.loginService.getUsers()
     .then(response =>{
       this.usersCol = response;
     })
-  }
+  }*/
 
 }

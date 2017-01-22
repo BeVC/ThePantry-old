@@ -1,9 +1,18 @@
-<div class="test">
+<div>
+	<label>Enter your email-address</label>
+	<input type="email" id="email" name="email" [(ngModel)]="email">
+
+	<label>Enter your password</label>
+	<input type="password" id="password" name="password" [(ngModel)]="password">
+
+</div>
+
+<!--<div class="test">
 	<p>
 		login works!
 	</p>
-</div>
+</div>-->
 
 
-<button (click)="testUserService()">Press me</button>
-<p>{{usersCol.length}}</p>
+<!--<button (click)="testUserService()">Press me</button>
+<p>{{usersCol.length}}</p>-->
