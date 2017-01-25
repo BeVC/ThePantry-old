@@ -41,7 +41,7 @@ export class LoginComponent implements OnInit {
 
   //#region UI Events
   onSubmit() {
-    //this.submitted = true;
+    console.log("is submitted");
   }
   //#endregion
 
@@ -86,12 +86,4 @@ export class LoginComponent implements OnInit {
     }
   }
   //#endregion
-
-  /*testUserService(){
-    this.loginService.getUsers()
-    .then(response =>{
-      this.usersCol = response;
-    })
-  }*/
-
 }
