@@ -1,6 +1,7 @@
 // ANGULAR
 import { Component, OnInit, ViewEncapsulation, ViewChild, AfterViewChecked } from '@angular/core';
 import { NgForm } from "@angular/forms";
+import { Router } from "@angular/router";
 
 // SERVICE
 import { LoginService } from "../../service/login.service";
@@ -27,7 +28,8 @@ export class LoginComponent implements OnInit {
   //usersCol: User[] = [];
 
   constructor(
-    private loginService: LoginService
+    private router: Router,
+    private loginService: LoginService    
   ) { }
 
   //#region Angular Events
@@ -46,6 +48,9 @@ export class LoginComponent implements OnInit {
 
   uiOnLoginFakeClicked(){
     console.log("log faked");
+    let path = "/hub";
+    this.router.navigate([path]);
+
   }
   //#endregion
 
