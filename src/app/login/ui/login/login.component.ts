@@ -43,6 +43,10 @@ export class LoginComponent implements OnInit {
   onSubmit() {
     console.log("is submitted");
   }
+
+  uiOnLoginFakeClicked(){
+    console.log("log faked");
+  }
   //#endregion
 
   //#region Private Class Functions

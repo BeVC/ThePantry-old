@@ -16,5 +16,6 @@
 		</div>
 	</div>
 
-	<button type="submit" class="button login" [class.disabled]="!loginForm.form.valid" [disabled]="!loginForm.form.valid">Login</button>
+	<!--<button type="submit" class="button login" [class.disabled]="!loginForm.form.valid" [disabled]="!loginForm.form.valid">Login</button>-->
+	<button type="button" class="button login" (click)="uiOnLoginFakeClicked()">Login Fake</button>
 </form>
