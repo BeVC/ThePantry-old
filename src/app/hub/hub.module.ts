@@ -6,6 +6,10 @@ import { HubComponent } from './ui/hub.component';
 
 // ROUTING
 import { HubRoutingModule } from "./hub-routing.module";
+
+// TREE
+import { TreeView } from "./ui/tree/tree";
+
 //#endregion
 
 @NgModule({
@@ -13,7 +17,10 @@ import { HubRoutingModule } from "./hub-routing.module";
     CommonModule,
     HubRoutingModule
   ],
-  declarations: [HubComponent]
+  declarations: [
+    HubComponent,
+    TreeView
+  ]
 })
 
 export class HubModule { }

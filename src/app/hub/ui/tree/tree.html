@@ -1,0 +1,12 @@
+<ul>
+    <li *ngFor="let item of data">
+        <div class="box">
+            <span class="cbx"><input type="checkbox"/></span>
+            <div class="text">
+                <span class="icon">*</span>
+                <span>{{item.name}}</span>
+            </div>
+        </div>
+        <tree [data]="item.children"></tree>
+    </li>
+</ul>
