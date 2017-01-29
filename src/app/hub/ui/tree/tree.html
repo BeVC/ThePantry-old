@@ -1,5 +1,5 @@
 <ul>
-    <li *ngFor="let item of data">
+    <li *ngFor="let item of data" (click)="uiOnListItemClicked()">
         <div class="box">
             <span class="cbx"><input type="checkbox"/></span>
             <div class="text" [style.padding-left]="calculatedPadding">
@@ -7,6 +7,6 @@
                 <span>{{item.name}}</span>
             </div>
         </div>
-        <tree [data]="item.children" [padding]="newPadding"></tree>
+        <tree [data]="item.children" [padding]="newPadding" *ngIf="isCollapsed"></tree>
     </li>
 </ul>

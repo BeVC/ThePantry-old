@@ -11,6 +11,8 @@ export class TreeView implements OnInit {
     newPadding: number;
     calculatedPadding: string;
 
+    isCollapsed: boolean = false;
+
     @Input("data") data;
     @Input("padding") padding: number;
 
@@ -22,5 +24,9 @@ export class TreeView implements OnInit {
     private calculatePadding(padding): string {
         let calc = padding * 10;
         return calc + "px";
+    }
+
+    uiOnListItemClicked(){
+        this.isCollapsed = true;//!this.isCollapsed;
     }
 }
