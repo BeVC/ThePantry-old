@@ -1,30 +1,37 @@
 @import "../../../../stylesheets/main";
 
 tree {
+    
     ul {
-        list-style: none;
+        list-style: none;  
+
+        li{
+            .box {            
+                line-height: 25px;
+                .cbx {
+                    background: salmon;
+                    width: 50px;
+                    display: block;
+                    float: left;
+                    left:0;
+                    border: 1px solid black;
+                }
+                .text {
+                    width: calc(100% - 50px);
+                    float:left;
+                    border-bottom: 1px solid black;
+                    border-top: 1px solid black;                      
+                }
+                .padding{
+                    padding-inline-start: 10px;
+                }
+            }
+
+        }
+
     }
 
-    li{
-        .box {            
-            line-height: 25px;
-        }
-        .cbx {
-            background: salmon;
-            width: 50px;
-            display: block;
-            float: left;
-            //position: absolute;
-            left:0;
-            border: 1px solid black;
-        }
-        .text {
-            width: calc(100% - 50px);
-            float:left;
-            border-bottom: 1px solid black;
-            border-top: 1px solid black;
-        }
-    }
+
     /*&:after{
         @include clearfix();
     }*/
