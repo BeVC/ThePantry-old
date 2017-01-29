@@ -3,7 +3,7 @@
 tree {
     
     ul {
-        list-style: none;  
+        list-style: none;          
 
         li{
             .box {            
@@ -20,15 +20,17 @@ tree {
                     width: calc(100% - 50px);
                     float:left;
                     border-bottom: 1px solid black;
-                    border-top: 1px solid black;                      
+                    border-top: 1px solid black;         
                 }
-                .padding{
-                    padding-inline-start: 10px;
-                }
+                
             }
 
         }
 
+    }
+
+    .padding{
+        padding-left: 10px;
     }
 
 
