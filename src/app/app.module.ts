@@ -12,10 +12,12 @@ import { AppRoutingModule } from "./app-routing.module";
 
 // COMPONENT
 import { AppComponent } from './app.component';
+import { PantryComponent } from './pantry/pantry/pantry.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    PantryComponent
   ],
   imports: [
     BrowserModule,
