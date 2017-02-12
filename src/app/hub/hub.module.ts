@@ -7,6 +7,9 @@ import { HubComponent } from './ui/hub.component';
 // ROUTING
 import { HubRoutingModule } from "./hub-routing.module";
 import { NavbarComponent } from './ui/navbar/navbar.component';
+
+// BROKER
+import { UserBroker } from "./broker/user.service";
 //#endregion
 
 @NgModule({
@@ -14,7 +17,13 @@ import { NavbarComponent } from './ui/navbar/navbar.component';
     CommonModule,
     HubRoutingModule
   ],
-  declarations: [HubComponent, NavbarComponent]
+  declarations: [
+    HubComponent,
+    NavbarComponent
+  ],
+  providers: [
+    UserBroker
+  ]
 })
 
 export class HubModule { }

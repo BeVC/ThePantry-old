@@ -3,11 +3,16 @@ import { Component, OnInit, ViewEncapsulation, ViewChild, AfterViewChecked } fro
 import { NgForm } from "@angular/forms";
 import { Router } from "@angular/router";
 
+// RXJS
+import { Subscription } from "rxjs";
+
 // SERVICE
 import { LoginService } from "../../service/login.service";
 
-// MODELS
+// BROKER
+import { UserBroker } from "../../../hub/broker/user.service";
 
+// MODELS
 import { User } from "../../../models/user";
 
 @Component({
@@ -25,16 +30,17 @@ export class LoginComponent implements OnInit {
   loginForm: NgForm;
   @ViewChild("loginForm") currentForm: NgForm;
 
-  //usersCol: User[] = [];
+  // BROKER SUBSCRIPTIONS
+  private _userLoggedInSubscription: Subscription
 
   constructor(
     private router: Router,
-    private loginService: LoginService    
+    private loginService: LoginService,
+    private userBroker: UserBroker
   ) { }
 
   //#region Angular Events
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   ngAfterViewChecked() {
     this.formChanged();
@@ -46,18 +52,19 @@ export class LoginComponent implements OnInit {
     console.log("is submitted");
   }
 
-  uiOnLoginFakeClicked(){
+  uiOnLoginFakeClicked() {
     this.loginService.getUsers()
-    .subscribe((users)=>{
-      users;
-    },(error)=>{
-      error;
-    })
-
-    //console.log("log faked");
-    //let path = "/hub";
-    //this.router.navigate([path]);
-
+      .subscribe((users) => {
+        let user: User;
+        user = users.find(user => user.email == this.email && user.password == this.password);
+        if (user) {
+          console.log("log faked");
+          let path = "/hub";
+          this.router.navigate([path]);
+        }
+      }, (error) => {
+        error;
+      })
   }
   //#endregion
 
