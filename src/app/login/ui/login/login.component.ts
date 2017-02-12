@@ -18,8 +18,8 @@ import { User } from "../../../models/user";
 })
 export class LoginComponent implements OnInit {
   // UI PROPERTIES
-  private email: string;
-  private password: string;
+  private email: string = "spam2@email.com";
+  private password: string = "Azert2";
 
 
   loginForm: NgForm;
@@ -47,9 +47,16 @@ export class LoginComponent implements OnInit {
   }
 
   uiOnLoginFakeClicked(){
-    console.log("log faked");
-    let path = "/hub";
-    this.router.navigate([path]);
+    this.loginService.getUsers()
+    .subscribe((users)=>{
+      users;
+    },(error)=>{
+      error;
+    })
+
+    //console.log("log faked");
+    //let path = "/hub";
+    //this.router.navigate([path]);
 
   }
   //#endregion
