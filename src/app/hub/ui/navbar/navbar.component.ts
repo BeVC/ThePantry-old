@@ -1,6 +1,6 @@
 //#region import
 // ANGULAR
-import { Component, OnInit, OnDestroy, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, OnDestroy, ViewEncapsulation  } from '@angular/core';
 import { Router } from "@angular/router";
 
 // RXJS
@@ -19,10 +19,12 @@ import { User } from "../../../models/user";
   styleUrls: ['./navbar.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class NavbarComponent implements OnInit, OnDestroy {
+export class NavbarComponent implements OnInit, OnDestroy  {
+  // UI PROPERTIES
+  user: User;
 
   // BROKER SUBSCRIPTIONS
-  private _userLoggedSubscription: Subscription
+  //private _userLoggedSubscription: Subscription -> probably useless
 
   constructor(
     private router: Router,
@@ -30,15 +32,16 @@ export class NavbarComponent implements OnInit, OnDestroy {
   ) { }
 
   ngOnInit() {
-    this._userLoggedSubscription = this.userBroker.onUserLoggedAsync()
+    /*this._userLoggedSubscription = this.userBroker.onUserLoggedAsync()
     .subscribe(user =>{
       user;
-      alert(user.firstName);
-    });
+    });*/ //this may well be useless
+
+    this.user = this.userBroker.getUser();
   }
 
   ngOnDestroy(){
-    this._userLoggedSubscription.unsubscribe();
+    //this._userLoggedSubscription.unsubscribe(); -> probably useless
   }
 
   //#region UI Events
