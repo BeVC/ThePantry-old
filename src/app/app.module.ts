@@ -13,6 +13,9 @@ import { AppRoutingModule } from "./app-routing.module";
 // COMPONENT
 import { AppComponent } from './app.component';
 
+// BROKER
+import { UserBroker } from "./broker/user.service";
+
 @NgModule({
   declarations: [
     AppComponent
@@ -25,7 +28,7 @@ import { AppComponent } from './app.component';
 
     AppRoutingModule
   ],
-  providers: [],
+  providers: [UserBroker],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

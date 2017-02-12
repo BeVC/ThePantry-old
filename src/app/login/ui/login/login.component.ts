@@ -10,7 +10,7 @@ import { Subscription } from "rxjs";
 import { LoginService } from "../../service/login.service";
 
 // BROKER
-import { UserBroker } from "../../../hub/broker/user.service";
+import { UserBroker } from "../../../broker/user.service";
 
 // MODELS
 import { User } from "../../../models/user";
@@ -57,6 +57,7 @@ export class LoginComponent implements OnInit {
       .subscribe((users) => {
         let user: User;
         user = users.find(user => user.email == this.email && user.password == this.password);
+        this.userBroker.setUser(user);
         if (user) {
           console.log("log faked");
           let path = "/hub";

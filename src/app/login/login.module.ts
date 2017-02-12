@@ -20,7 +20,9 @@ import { LoginComponent } from './ui/login/login.component';
 
   ],
   declarations: [LoginComponent],
-  providers: [LoginService]
+  providers: [
+    LoginService
+  ]
 
 })
 export class LoginModule { }

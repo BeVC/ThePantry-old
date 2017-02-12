@@ -8,8 +8,6 @@ import { HubComponent } from './ui/hub.component';
 import { HubRoutingModule } from "./hub-routing.module";
 import { NavbarComponent } from './ui/navbar/navbar.component';
 
-// BROKER
-import { UserBroker } from "./broker/user.service";
 //#endregion
 
 @NgModule({
@@ -22,7 +20,6 @@ import { UserBroker } from "./broker/user.service";
     NavbarComponent
   ],
   providers: [
-    UserBroker
   ]
 })
 
