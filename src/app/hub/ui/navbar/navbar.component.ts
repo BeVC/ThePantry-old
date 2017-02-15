@@ -24,7 +24,7 @@ export class NavbarComponent implements OnInit, OnDestroy  {
   user: User;
 
   // BROKER SUBSCRIPTIONS
-  //private _userLoggedSubscription: Subscription -> probably useless
+  private _userLoggedSubscription: Subscription //-> probably useless
 
   constructor(
     private router: Router,
@@ -32,16 +32,16 @@ export class NavbarComponent implements OnInit, OnDestroy  {
   ) { }
 
   ngOnInit() {
-    /*this._userLoggedSubscription = this.userBroker.onUserLoggedAsync()
+    this._userLoggedSubscription = this.userBroker.onUserLoggedAsync()
     .subscribe(user =>{
       user;
-    });*/ //this may well be useless
+    }); //this may well be useless
 
     this.user = this.userBroker.getUser();
   }
 
   ngOnDestroy(){
-    //this._userLoggedSubscription.unsubscribe(); -> probably useless
+    this._userLoggedSubscription.unsubscribe();// -> probably useless
   }
 
   //#region UI Events

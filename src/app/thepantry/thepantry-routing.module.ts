@@ -1,22 +1,21 @@
 import { NgModule }     from '@angular/core';
 import { RouterModule } from '@angular/router';
 
-import { HubComponent } from './ui/hub.component';
+import { PantryOverviewComponent } from "./ui/pantry-overview/pantry-overview.component";
 
 @NgModule({
     imports: [
         RouterModule.forChild([
             {
                 path:'',
-                component: HubComponent,
+                component: PantryOverviewComponent,
                 children:[
                     {
                         path: ""
                     },
 
                 ]
-            },
-            
+            }
         ])
     ],
     exports:[
@@ -24,4 +23,4 @@ import { HubComponent } from './ui/hub.component';
     ]
 })
 
-export class HubRoutingModule {}
+export class ThePantryRoutingModule {}
