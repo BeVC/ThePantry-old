@@ -8,11 +8,14 @@ import { HubComponent } from './ui/hub.component';
 import { HubRoutingModule } from "./hub-routing.module";
 import { NavbarComponent } from './ui/navbar/navbar.component';
 
+import { ThePantryModule} from "../thepantry/thepantry.module";
+
 //#endregion
 
 @NgModule({
   imports: [
     CommonModule,
+    ThePantryModule,
     HubRoutingModule
   ],
   declarations: [

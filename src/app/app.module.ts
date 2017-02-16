@@ -9,6 +9,7 @@ import { InMemoryDataService }  from '../in-memory-data.service';
 
 // ROUTING
 import { AppRoutingModule } from "./app-routing.module";
+import { HubModule } from "./hub/hub.module";
 
 // COMPONENT
 import { AppComponent } from './app.component';
@@ -26,7 +27,9 @@ import { UserBroker } from "./broker/user.service";
     HttpModule,
     InMemoryWebApiModule.forRoot(InMemoryDataService),
 
-    AppRoutingModule
+    HubModule,
+    AppRoutingModule,
+
   ],
   providers: [UserBroker],
   bootstrap: [AppComponent]

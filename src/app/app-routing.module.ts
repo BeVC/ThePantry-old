@@ -19,12 +19,8 @@ const routes: Routes = [
   },
   {
     path: "hub",
-    loadChildren: "app/hub/hub.module#HubModule"
-  },
-  {
-    path: "pantry",
-    loadChildren: "app/thepantry/thepantry.module#ThePantryModule"
-  }
+    loadChildren: "app/hub/hub.module"
+  } 
 ];
 
 @NgModule({

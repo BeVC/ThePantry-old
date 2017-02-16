@@ -1,4 +1,4 @@
-import { NgModule }     from '@angular/core';
+import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 import { HubComponent } from './ui/hub.component';
@@ -7,21 +7,18 @@ import { HubComponent } from './ui/hub.component';
     imports: [
         RouterModule.forChild([
             {
-                path:'',
+                path: 'hub',
                 component: HubComponent,
-                children:[
-                    {
-                        path: ""
-                    },
-
-                ]
-            },
-            
+                children: [{
+                    path: "pantry",
+                    loadChildren: "app/thepantry/thepantry.module#ThePantryModule"
+                }]
+            }
         ])
     ],
-    exports:[
+    exports: [
         RouterModule
     ]
 })
 
-export class HubRoutingModule {}
+export class HubRoutingModule { }

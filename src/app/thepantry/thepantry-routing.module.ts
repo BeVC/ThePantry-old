@@ -8,13 +8,7 @@ import { PantryOverviewComponent } from "./ui/pantry-overview/pantry-overview.co
         RouterModule.forChild([
             {
                 path:'',
-                component: PantryOverviewComponent,
-                children:[
-                    {
-                        path: ""
-                    },
-
-                ]
+                component: PantryOverviewComponent,                
             }
         ])
     ],
